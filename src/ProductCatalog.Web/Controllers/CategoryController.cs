@@ -32,7 +32,7 @@ namespace ProductCatalog.Web.Controllers
             return await _categoryRepository.GetForId(id);
         }
 
-        [Route("v1/categories/{id}/products")]
+        [Route("v1/categories/products/{id}")]
         [HttpGet]
         public async Task<IEnumerable<Product>> GetProducts(int id)
         {

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using ProductCatalog.Web.Data;
 using ProductCatalog.Web.Models;
 using ProductCatalog.Web.Repositories.Contracts;
 using ProductCatalog.Web.ViewModels;
@@ -20,14 +19,14 @@ namespace ProductCatalog.Web.Controllers
         }
 
         [HttpGet]
-        [Route("v1/categories/{id}")]
+        [Route("v1/products")]
         public async Task<IEnumerable<ProductViewModel>> Get()
         {
             return await _productRepository.GetProducts();
         }
 
         [HttpGet]
-        [Route("v1/categories/{id}")]
+        [Route("v1/products/{id}")]
         public async Task<Product> Get(int id)
         {
             return await _productRepository.Product(id);
